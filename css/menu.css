@@ -67,23 +67,27 @@ h1, h2, h3, h4, h5, h6, p, a, i {
 }
 
 h1 {
-    font-size: 7.5rem;
-}
-
-h2 {
     font-size: 6rem;
 }
 
-h3 {
+h2 {
     font-size: 5rem;
 }
 
-h4 {
+h3 {
     font-size: 4rem;
 }
 
-p, a {
+h4 {
     font-size: 3rem;
+}
+
+p, a {
+    font-size: 2rem;
+}
+
+h1,h2,h3,h4,p,a{
+    color:white;
 }
 
 /* header section */
@@ -94,6 +98,46 @@ header {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+}
+.header_background{
+    box-shadow: inset 0 35vh 0 0 rgba(0, 4, 17, 8);
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem 0;
+    gap: 2rem; 
+}
+.header-nav{
+    width:80%;
+}
+
+.header_a{
+    display: flex;
+    justify-content: space-around; 
+}
+
+.header_a a{
+    transition: 0.5s;
+}
+
+.header-nav div a:hover{
+    color: cadetblue;
+    
+    
+}
+
+.icons{
+    width: 60%;
+    margin: 3rem auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+.icon_size{
+    font-size: 3rem;
 }
 
 /* spacer */
@@ -118,19 +162,92 @@ header {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    box-shadow: inset 0 1400px 0 0 rgba(0, 4, 17,0.8);
 }
+
+article h2{
+    text-align: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+.wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    width:80%;
+    margin: 0 auto;
+    justify-content: space-between;
+    gap: 4rem;
+}
+.menu-container{
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+}
+.menu-itemRow1{
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu-item p{
+    font-size: 1.5rem;
+}
+
 
 /* footer section */
 footer {
     width: 100%;
-    height: 15vh;
+    /* height: 15vh; */
     padding-top: 2.5vh;
     font-size: 3rem;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+}
+.footer_Input_nav{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer_Input{
+    width: 25%;
+    text-align: center;
+}
+
+.footer_nav{
+    width:75%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.footer_p{
+    text-align: end;
+    padding-right: 15rem;
+    padding-top: 1rem;
+}
+.footer_p p{
+    font-size: 1rem;
 }
 
 /* mobile media query */
 @media (max-width: 428px) {
     /* header section */
+    h1 {
+        font-size: 3.5rem;
+    }
+     a{
+        font-size: 1.5rem;
+    }
+    header{
+        text-align: center;
+    }
+    .header_background{
+        box-shadow: inset 0 48vh 0 0 rgba(0, 4, 17,0.65);
+    }
+
+    header a h1 span:nth-of-type(2){
+        display: block;
+    }
+
     .header-title {
         width: 75%;
         margin: 0 auto;
@@ -141,6 +258,47 @@ footer {
     /* menu */
     .menu {
         background-image: none;
+        background-color: white;
+        box-shadow:none;
+    }
+
+    .spacer-sm {
+        height: 10vh;
+        background-color:white;
+    }
+    article h2{
+        padding-bottom: 2rem;
+        border-bottom: 4px solid black;
+    }
+    
+    .wrapper{
+        gap: 2rem;
+    }
+    .menu-container{
+        margin-top: 2rem;
+    }
+
+    .menu-section{
+        border: solid black;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    .menu-item{
+        text-align: center;
+        border-bottom: 2px solid black;
+    }
+
+    .menu-item:nth-last-child(1){
+        border-bottom: none;
+    }
+
+    .menu-itemRow1{
+        flex-direction: column;
+    }
+
+
+    .menu h2, .menu h4, .menu p, .menu h3 { 
+        color:black;
     }
 
     /* footer section */
@@ -149,4 +307,41 @@ footer {
         padding-top: 2.5vh;
         font-size: 2rem;
     }
+    .footer_Input_nav{
+        flex-direction: column;
+    }
+    
+    .footer_Input{
+        width: 100%;
+    }
+    
+    .footer_Input p{
+        margin-bottom: 1rem;
+    }
+    
+    .footer_Input input{
+        width:60%;
+        margin: 0 auto;
+        display: block;
+    }
+    
+    .footer_Input button{
+        width:60%;
+        margin: 0 auto;
+        display: block;
+    }
+    
+    .footer_nav{
+        width:100%;
+        flex-direction: column;
+        margin-top: 2rem ;
+    }
+    .footer_p{
+        text-align: end;
+        padding-right: 10rem;
+    }
+    .footer_p p{
+        font-size: 1rem;
+    }
+    
 }
